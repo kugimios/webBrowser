@@ -14,6 +14,8 @@
 		926804D61F94870300CBE551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926804D41F94870300CBE551 /* LaunchScreen.storyboard */; };
 		926804E11F94870300CBE551 /* webApp2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804E01F94870300CBE551 /* webApp2Tests.swift */; };
 		926804EC1F94870300CBE551 /* webApp2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804EB1F94870300CBE551 /* webApp2UITests.swift */; };
+		926804FB1F94874A00CBE551 /* checkUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804FA1F94874A00CBE551 /* checkUrl.swift */; };
+		926804FD1F9494C100CBE551 /* WebStettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		926804E71F94870300CBE551 /* webApp2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = webApp2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		926804EB1F94870300CBE551 /* webApp2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webApp2UITests.swift; sourceTree = "<group>"; };
 		926804ED1F94870300CBE551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926804FA1F94874A00CBE551 /* checkUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkUrl.swift; sourceTree = "<group>"; };
+		926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebStettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		926804BF1F94870300CBE551 = {
 			isa = PBXGroup;
 			children = (
+				926804F91F94873200CBE551 /* tools */,
 				926804CA1F94870300CBE551 /* webApp2 */,
 				926804DF1F94870300CBE551 /* webApp2Tests */,
 				926804EA1F94870300CBE551 /* webApp2UITests */,
@@ -99,6 +104,7 @@
 			children = (
 				926804CB1F94870300CBE551 /* AppDelegate.swift */,
 				926804CD1F94870300CBE551 /* ViewController.swift */,
+				926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */,
 				926804CF1F94870300CBE551 /* Main.storyboard */,
 				926804D21F94870300CBE551 /* Assets.xcassets */,
 				926804D41F94870300CBE551 /* LaunchScreen.storyboard */,
@@ -123,6 +129,14 @@
 				926804ED1F94870300CBE551 /* Info.plist */,
 			);
 			path = webApp2UITests;
+			sourceTree = "<group>";
+		};
+		926804F91F94873200CBE551 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				926804FA1F94874A00CBE551 /* checkUrl.swift */,
+			);
+			name = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +275,8 @@
 			files = (
 				926804CE1F94870300CBE551 /* ViewController.swift in Sources */,
 				926804CC1F94870300CBE551 /* AppDelegate.swift in Sources */,
+				926804FD1F9494C100CBE551 /* WebStettingsViewController.swift in Sources */,
+				926804FB1F94874A00CBE551 /* checkUrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
