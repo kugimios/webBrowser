@@ -12,12 +12,20 @@ func verifyUrl (_ urlString: String?) -> Bool {
 }
 
 
-func goOrSearchURL(_ checkURL: String!) -> String {
+func goOrSearchURL(
+        checkURL: String!,
+        searchURLField: String,
+        isSearchable: Bool
+    ) -> (url: String, isGoing: Bool) {
     let isURL = verifyUrl(checkURL)
+    
     if isURL == true {
-        return checkURL
+        return (url: checkURL, isGoing: true)
     }
-    let addedPlus = checkURL.replacingOccurrences(of: " ", with: "+")
-    let searchedURL = "https://www.google.com.tr/search?q=\(addedPlus)"
-    return searchedURL
+    if isSearchable == true {
+        let addedPlus = checkURL.replacingOccurrences(of: " ", with: "+")
+        let searchedURL = searchURLField + addedPlus
+        return (url: searchedURL, isGoing: true)
+    }
+    return (url: checkURL, isGoing: false)
 }

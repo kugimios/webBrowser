@@ -13,8 +13,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var goBtnOutlet: UIButton!
     @IBAction func goBtnAction(_ sender: UIButton) {
-        let url = goOrSearchURL(urlTextFieldOutlet.text!)
-        print(url)
+        let urlCheck = goOrSearchURL(
+                checkURL: urlTextFieldOutlet.text!,
+                searchURLField: searchURL,
+                isSearchable: searchIsOn
+        )
+        print(urlCheck.url)
+        print(urlCheck.isGoing)
         
     }
 
