@@ -19,6 +19,7 @@ var searchURL = 2
 
 
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var historyViewOutlet: UIView!
     
     @IBAction func settingsSegmentAction(_ sender: UISegmentedControl) {
         print(sender.selectedSegmentIndex)

@@ -16,6 +16,7 @@
 		926804EC1F94870300CBE551 /* webApp2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804EB1F94870300CBE551 /* webApp2UITests.swift */; };
 		926804FB1F94874A00CBE551 /* checkUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804FA1F94874A00CBE551 /* checkUrl.swift */; };
 		926804FD1F9494C100CBE551 /* WebStettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */; };
+		9272B9361F9601D000C99C10 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9272B9351F9601D000C99C10 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		926804ED1F94870300CBE551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926804FA1F94874A00CBE551 /* checkUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkUrl.swift; sourceTree = "<group>"; };
 		926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebStettingsViewController.swift; sourceTree = "<group>"; };
+		9272B9351F9601D000C99C10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		926804BF1F94870300CBE551 = {
 			isa = PBXGroup;
 			children = (
+				9272B9351F9601D000C99C10 /* README.md */,
 				926804F91F94873200CBE551 /* tools */,
 				926804CA1F94870300CBE551 /* webApp2 */,
 				926804DF1F94870300CBE551 /* webApp2Tests */,
@@ -275,6 +278,7 @@
 			files = (
 				926804CE1F94870300CBE551 /* ViewController.swift in Sources */,
 				926804CC1F94870300CBE551 /* AppDelegate.swift in Sources */,
+				9272B9361F9601D000C99C10 /* README.md in Sources */,
 				926804FD1F9494C100CBE551 /* WebStettingsViewController.swift in Sources */,
 				926804FB1F94874A00CBE551 /* checkUrl.swift in Sources */,
 			);
@@ -523,6 +527,7 @@
 				926804F21F94870300CBE551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		926804F31F94870300CBE551 /* Build configuration list for PBXNativeTarget "webApp2Tests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +536,7 @@
 				926804F51F94870300CBE551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		926804F61F94870300CBE551 /* Build configuration list for PBXNativeTarget "webApp2UITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +545,7 @@
 				926804F81F94870300CBE551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

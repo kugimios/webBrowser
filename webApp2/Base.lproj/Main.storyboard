@@ -115,6 +115,9 @@
                                     <segment title="Ayarlar"/>
                                     <segment title="Gecmis"/>
                                 </segments>
+                                <connections>
+                                    <action selector="settingsSegmentAction:" destination="NIp-9b-bep" eventType="valueChanged" id="gGr-uR-jBT"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-CV-L55">
                                 <rect key="frame" x="16" y="20" width="34" height="30"/>
@@ -124,10 +127,25 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="AfU-Jl-aaG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-xl-yH5">
+                                <rect key="frame" x="16" y="85" width="288" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lR-PI-D4r">
+                                        <rect key="frame" x="123" y="165" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="historyViewOutlet" destination="vUx-xl-yH5" id="bL3-Jp-Qoh"/>
                         <outlet property="searchEnginePickerOutlet" destination="YBQ-qp-wDX" id="OH6-2V-179"/>
                         <outlet property="searchImageOutlet" destination="Sy2-55-sDw" id="hpF-PJ-yi0"/>
                         <outlet property="searchSettingsView" destination="rew-7l-64K" id="ofl-qQ-wUu"/>
