@@ -17,6 +17,7 @@ func goOrSearchURL(
         searchURLField: String,
         isSearchable: Bool
     ) -> (url: String, isGoing: Bool) {
+    
     let isURL = verifyUrl(checkURL)
     
     if isURL == true {
