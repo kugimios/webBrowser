@@ -15,7 +15,7 @@ let searchEngines = [
 ]
 
 var searchIsOn = true
-var searchURL = ""
+var searchURL = 2
 
 
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -35,7 +35,7 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        searchURL = searchEngines[row][1]
+        searchURL = row
         print(print(searchURL))
     }
     
@@ -64,8 +64,8 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         
         // change default search engine
-        searchEnginePickerOutlet.selectRow(2, inComponent: 0, animated: true)
-        searchURL = searchEngines[2][1]
+        searchEnginePickerOutlet.selectRow(searchURL, inComponent: 0, animated: true)
+
         
         // globaldeki bilgi searchSwitchOutlet'e gelsin
         searchSwitchOutlet.isOn = searchIsOn

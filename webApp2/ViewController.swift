@@ -15,11 +15,29 @@ class ViewController: UIViewController {
     @IBAction func goBtnAction(_ sender: UIButton) {
         let urlCheck = goOrSearchURL(
                 checkURL: urlTextFieldOutlet.text!,
-                searchURLField: searchURL,
+                searchURLField: searchEngines[searchURL][1],
                 isSearchable: searchIsOn
         )
         print(urlCheck.url)
         print(urlCheck.isGoing)
+        
+        if urlCheck.isGoing == false {
+            // let alert = UIAlertController(title: "Title", message: "Uyari Mesaji", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Title", message: "Uyari Mesaji", preferredStyle: .actionSheet)
+            let action1 = UIAlertAction(title: "Ayarlar'a Git", style: .default){ (_: UIAlertAction) in
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let settingsViewController = storyBoard.instantiateViewController(withIdentifier: "WebStettingsViewController")
+                self.present(settingsViewController, animated: true, completion: nil)
+            }
+            let action2 = UIAlertAction(title: "Iptal", style: .cancel){ (_: UIAlertAction) in
+                print("cancel")
+            }
+            alert.addAction(action1)
+            alert.addAction(action2)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            print("Gidilecek URL : \(urlCheck.url)")
+        }
         
     }
 

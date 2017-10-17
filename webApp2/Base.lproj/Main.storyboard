@@ -59,7 +59,7 @@
         <!--Web Stettings View Controller-->
         <scene sceneID="2DN-dj-MsS">
             <objects>
-                <viewController id="NIp-9b-bep" customClass="WebStettingsViewController" customModule="webApp2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebStettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NIp-9b-bep" customClass="WebStettingsViewController" customModule="webApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tYI-so-XgW"/>
                         <viewControllerLayoutGuide type="bottom" id="pjq-ND-haU"/>
