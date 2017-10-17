@@ -16,13 +16,22 @@ let searchEngines = [
 
 var searchIsOn = true
 var searchURL = 2
+var selectedSegment = 0
 
 
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var historyViewOutlet: UIView!
     
     @IBAction func settingsSegmentAction(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 0 {
+            historyViewOutlet.isHidden = true
+            settingsViewOutlet.isHidden = false
+            
+        } else {
+            historyViewOutlet.isHidden = false
+            settingsViewOutlet.isHidden = true
+        }
+        selectedSegment = sender.selectedSegmentIndex
     }
     
     @IBOutlet weak var settingsSegmentOutlet: UISegmentedControl!
@@ -80,6 +89,10 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         // globaldeki bilgi searchSwitchOutlet'e gelsin
         searchSwitchOutlet.isOn = searchIsOn
         searchSwitchAction(searchSwitchOutlet)
+        
+        // ilk acildiginda hangi segment seciliyse ona gore kurallar calissin
+        settingsSegmentOutlet.selectedSegmentIndex = selectedSegment
+        settingsSegmentAction(settingsSegmentOutlet)
         
     }
 
