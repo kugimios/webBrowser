@@ -9,9 +9,9 @@
 import UIKit
 
 let searchEngines = [
-    ["Google", "https://www.google.com.tr/search?q="],
-    ["Yandex", "https://yandex.com/search?q="],
-    ["Bing", "https://bing/search?q="],
+    ["Google", "https://www.google.com.tr/search?q=", "google"],
+    ["Yandex", "https://yandex.com/search?q=", "yahoo"],
+    ["Bing", "https://bing/search?q=", "bing"],
 ]
 
 var searchIsOn = true
@@ -20,6 +20,13 @@ var searchURL = 2
 
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBAction func settingsSegmentAction(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+    }
+    
+    @IBOutlet weak var settingsSegmentOutlet: UISegmentedControl!
+    @IBOutlet weak var settingsViewOutlet: UIView!
+    @IBOutlet weak var searchImageOutlet: UIImageView!
     @IBOutlet weak var searchEnginePickerOutlet: UIPickerView!
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -37,6 +44,7 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         searchURL = row
         print(print(searchURL))
+        searchImageOutlet.image = UIImage(named: searchEngines[row][2])
     }
     
     
@@ -65,6 +73,7 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         // change default search engine
         searchEnginePickerOutlet.selectRow(searchURL, inComponent: 0, animated: true)
+        searchImageOutlet.image = UIImage(named: searchEngines[searchURL][2])
 
         
         // globaldeki bilgi searchSwitchOutlet'e gelsin

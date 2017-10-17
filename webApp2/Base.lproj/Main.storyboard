@@ -68,50 +68,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qm5-11-7W9">
-                                <rect key="frame" x="255" y="66" width="51" height="31"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sb-OD-I0T">
+                                <rect key="frame" x="16" y="85" width="294" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="searchSwitchAction:" destination="NIp-9b-bep" eventType="valueChanged" id="yzZ-Qn-Rqx"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arama Yapilsin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTg-XV-a2r">
-                                <rect key="frame" x="16" y="71" width="112" height="21"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qm5-11-7W9">
+                                        <rect key="frame" x="245" y="8" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="searchSwitchAction:" destination="NIp-9b-bep" eventType="valueChanged" id="yzZ-Qn-Rqx"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arama Yapilsin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTg-XV-a2r">
+                                        <rect key="frame" x="0.0" y="13" width="112" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rew-7l-64K">
+                                        <rect key="frame" x="3" y="46" width="288" height="329"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-55-sDw">
+                                                <rect key="frame" x="24" y="181" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YBQ-qp-wDX">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="181"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="NIp-9b-bep" id="O0d-zJ-VcI"/>
+                                                    <outlet property="delegate" destination="NIp-9b-bep" id="aUP-wm-zBn"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-5G-vX5">
+                                <rect key="frame" x="16" y="49" width="294" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <segments>
+                                    <segment title="Ayarlar"/>
+                                    <segment title="Gecmis"/>
+                                </segments>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-CV-L55">
-                                <rect key="frame" x="16" y="28" width="34" height="30"/>
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="AfU-Jl-aaG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rew-7l-64K">
-                                <rect key="frame" x="16" y="127" width="288" height="333"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YBQ-qp-wDX">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="216"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="NIp-9b-bep" id="O0d-zJ-VcI"/>
-                                            <outlet property="delegate" destination="NIp-9b-bep" id="aUP-wm-zBn"/>
-                                        </connections>
-                                    </pickerView>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="searchEnginePickerOutlet" destination="YBQ-qp-wDX" id="OH6-2V-179"/>
+                        <outlet property="searchImageOutlet" destination="Sy2-55-sDw" id="hpF-PJ-yi0"/>
                         <outlet property="searchSettingsView" destination="rew-7l-64K" id="ofl-qQ-wUu"/>
                         <outlet property="searchSwitchOutlet" destination="qm5-11-7W9" id="8KI-L9-IsO"/>
+                        <outlet property="settingsSegmentOutlet" destination="iyg-5G-vX5" id="Ltu-Ox-4sy"/>
+                        <outlet property="settingsViewOutlet" destination="1Sb-OD-I0T" id="ENH-Fm-of5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U16-ys-FFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
