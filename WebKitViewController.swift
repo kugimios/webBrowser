@@ -15,24 +15,15 @@ class WebKitViewController: UIViewController, WKUIDelegate {
     var webView: WKWebView!
     
     
-    override func loadView() {
-        
-        
-        // webView = WKWebView(frame: webkitViewOutlet.bounds, configuration: webConfiguration)
-        // webView.uiDelegate = self
-        //view = webView
-    }
-
     @IBOutlet weak var webkitViewOutlet: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         webView = WKWebView(frame: webkitViewOutlet.bounds, configuration: WKWebViewConfiguration())
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.webkitViewOutlet.addSubview(webView)
-
-       
+        self.webView.allowsBackForwardNavigationGestures = true
         
         let myURL = URL(string: "https://www.apple.com")
         let myRequest = URLRequest(url: myURL!)
