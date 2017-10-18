@@ -86,14 +86,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rew-7l-64K">
-                                        <rect key="frame" x="3" y="46" width="288" height="329"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QxT-x1-bKo">
+                                        <rect key="frame" x="3" y="41" width="288" height="326"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-55-sDw">
-                                                <rect key="frame" x="24" y="181" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YBQ-qp-wDX">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="181"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -102,11 +98,15 @@
                                                     <outlet property="delegate" destination="NIp-9b-bep" id="aUP-wm-zBn"/>
                                                 </connections>
                                             </pickerView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-55-sDw">
+                                                <rect key="frame" x="24" y="190" width="240" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-5G-vX5">
                                 <rect key="frame" x="16" y="49" width="294" height="29"/>
@@ -127,28 +127,28 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="AfU-Jl-aaG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-xl-yH5">
-                                <rect key="frame" x="16" y="85" width="288" height="375"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WB3-8w-a0x">
+                                <rect key="frame" x="16" y="93" width="294" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lR-PI-D4r">
-                                        <rect key="frame" x="123" y="165" width="42" height="21"/>
+                                        <rect key="frame" x="126" y="173" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="historyViewOutlet" destination="vUx-xl-yH5" id="bL3-Jp-Qoh"/>
+                        <outlet property="historyViewOutlet" destination="WB3-8w-a0x" id="GHW-qi-aeg"/>
                         <outlet property="searchEnginePickerOutlet" destination="YBQ-qp-wDX" id="OH6-2V-179"/>
                         <outlet property="searchImageOutlet" destination="Sy2-55-sDw" id="hpF-PJ-yi0"/>
-                        <outlet property="searchSettingsView" destination="rew-7l-64K" id="ofl-qQ-wUu"/>
+                        <outlet property="searchSettingsView" destination="QxT-x1-bKo" id="c2q-zZ-lyf"/>
                         <outlet property="searchSwitchOutlet" destination="qm5-11-7W9" id="8KI-L9-IsO"/>
                         <outlet property="settingsSegmentOutlet" destination="iyg-5G-vX5" id="Ltu-Ox-4sy"/>
                         <outlet property="settingsViewOutlet" destination="1Sb-OD-I0T" id="ENH-Fm-of5"/>

@@ -14,9 +14,8 @@ let searchEngines = [
     ["Bing", "https://bing/search?q=", "bing"],
 ]
 
-var searchIsOn = true
-var searchURL = 2
-var selectedSegment = 0
+
+var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0)
 
 
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -31,7 +30,7 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
             historyViewOutlet.isHidden = false
             settingsViewOutlet.isHidden = true
         }
-        selectedSegment = sender.selectedSegmentIndex
+        searchSettings.selectedSegment = sender.selectedSegmentIndex
     }
     
     @IBOutlet weak var settingsSegmentOutlet: UISegmentedControl!
@@ -52,8 +51,8 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        searchURL = row
-        print(print(searchURL))
+        searchSettings.searchURL = row
+        print(print(searchSettings.searchURL))
         searchImageOutlet.image = UIImage(named: searchEngines[row][2])
     }
     
@@ -66,10 +65,10 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         if sender.isOn == true {
             searchSettingsView.isHidden = false
-            searchIsOn = true
+            searchSettings.searchIsOn = true
         } else {
             searchSettingsView.isHidden = true
-            searchIsOn = false
+            searchSettings.searchIsOn = false
         }
     }
     
@@ -82,16 +81,16 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         
         // change default search engine
-        searchEnginePickerOutlet.selectRow(searchURL, inComponent: 0, animated: true)
-        searchImageOutlet.image = UIImage(named: searchEngines[searchURL][2])
+        searchEnginePickerOutlet.selectRow(searchSettings.searchURL, inComponent: 0, animated: true)
+        searchImageOutlet.image = UIImage(named: searchEngines[searchSettings.searchURL][2])
 
         
         // globaldeki bilgi searchSwitchOutlet'e gelsin
-        searchSwitchOutlet.isOn = searchIsOn
+        searchSwitchOutlet.isOn = searchSettings.searchIsOn
         searchSwitchAction(searchSwitchOutlet)
         
         // ilk acildiginda hangi segment seciliyse ona gore kurallar calissin
-        settingsSegmentOutlet.selectedSegmentIndex = selectedSegment
+        settingsSegmentOutlet.selectedSegmentIndex = searchSettings.selectedSegment
         settingsSegmentAction(settingsSegmentOutlet)
         
     }

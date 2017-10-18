@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     @IBAction func goBtnAction(_ sender: UIButton) {
         let urlCheck = goOrSearchURL(
                 checkURL: urlTextFieldOutlet.text!,
-                searchURLField: searchEngines[searchURL][1],
-                isSearchable: searchIsOn
+                searchURLField: searchEngines[searchSettings.searchURL][1],
+                isSearchable: searchSettings.searchIsOn
         )
         print(urlCheck.url)
         print(urlCheck.isGoing)
