@@ -17,6 +17,7 @@
 		926804FB1F94874A00CBE551 /* checkUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804FA1F94874A00CBE551 /* checkUrl.swift */; };
 		926804FD1F9494C100CBE551 /* WebStettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */; };
 		9272B9361F9601D000C99C10 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9272B9351F9601D000C99C10 /* README.md */; };
+		92D3911C1F974F6B00B24A42 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D3911B1F974F6B00B24A42 /* WebKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		926804FA1F94874A00CBE551 /* checkUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkUrl.swift; sourceTree = "<group>"; };
 		926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebStettingsViewController.swift; sourceTree = "<group>"; };
 		9272B9351F9601D000C99C10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		92D3911B1F974F6B00B24A42 /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebKitViewController.swift; path = ../WebKitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				926804CB1F94870300CBE551 /* AppDelegate.swift */,
 				926804CD1F94870300CBE551 /* ViewController.swift */,
 				926804FC1F9494C100CBE551 /* WebStettingsViewController.swift */,
+				92D3911B1F974F6B00B24A42 /* WebKitViewController.swift */,
 				926804CF1F94870300CBE551 /* Main.storyboard */,
 				926804D21F94870300CBE551 /* Assets.xcassets */,
 				926804D41F94870300CBE551 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			files = (
 				926804CE1F94870300CBE551 /* ViewController.swift in Sources */,
 				926804CC1F94870300CBE551 /* AppDelegate.swift in Sources */,
+				92D3911C1F974F6B00B24A42 /* WebKitViewController.swift in Sources */,
 				9272B9361F9601D000C99C10 /* README.md in Sources */,
 				926804FD1F9494C100CBE551 /* WebStettingsViewController.swift in Sources */,
 				926804FB1F94874A00CBE551 /* checkUrl.swift in Sources */,

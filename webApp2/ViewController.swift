@@ -12,6 +12,7 @@ var historyData = [String]()
 
 
 class ViewController: UIViewController {
+    @IBOutlet weak var webViewOutlet: UIView!
     @IBOutlet weak var urlTextFieldOutlet: UITextField!
     
     @IBOutlet weak var goBtnOutlet: UIButton!
