@@ -25,9 +25,12 @@ class WebKitViewController: UIViewController, WKUIDelegate {
         self.webkitViewOutlet.addSubview(webView)
         self.webView.allowsBackForwardNavigationGestures = true
         
-        let myURL = URL(string: "https://www.apple.com")
+        // let myURL = URL(string: "https://www.google.com/")
+        let myURL = Bundle.main.url(forResource: "index", withExtension: "html")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
+        
+        
 
         // Do any additional setup after loading the view.
     }
