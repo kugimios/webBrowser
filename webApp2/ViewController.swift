@@ -8,6 +8,9 @@
 
 import UIKit
 
+var historyData = [String]()
+
+
 class ViewController: UIViewController {
     @IBOutlet weak var urlTextFieldOutlet: UITextField!
     
@@ -18,12 +21,17 @@ class ViewController: UIViewController {
                 searchURLField: searchEngines[searchSettings.searchURL][1],
                 isSearchable: searchSettings.searchIsOn
         )
-        print(urlCheck.url)
-        print(urlCheck.isGoing)
         
-        if urlCheck.isGoing == false {
+        if urlCheck.isGoing == true {
+            
+            print("Gidilecek URL : \(urlCheck.url)")
+            // historyData.append(urlCheck.url)
+            historyData.insert(urlCheck.url, at: 0)
+            
+        } else {
+            
             // let alert = UIAlertController(title: "Title", message: "Uyari Mesaji", preferredStyle: .alert)
-            let alert = UIAlertController(title: "Title", message: "Uyari Mesaji", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Uyari", message: "Uzgunuz, yazdiginiz url yalnis veya arama ayarlariniz kapali.", preferredStyle: .actionSheet)
             let action1 = UIAlertAction(title: "Ayarlar'a Git", style: .default){ (_: UIAlertAction) in
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let settingsViewController = storyBoard.instantiateViewController(withIdentifier: "WebStettingsViewController")
@@ -35,8 +43,7 @@ class ViewController: UIViewController {
             alert.addAction(action1)
             alert.addAction(action2)
             self.present(alert, animated: true, completion: nil)
-        } else {
-            print("Gidilecek URL : \(urlCheck.url)")
+
         }
         
     }

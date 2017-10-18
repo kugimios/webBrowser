@@ -21,6 +21,7 @@ var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0)
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var historyViewOutlet: UIView!
     
+    @IBOutlet weak var historyLabelOutlet: UILabel!
     @IBAction func settingsSegmentAction(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             historyViewOutlet.isHidden = true
@@ -84,7 +85,6 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         searchEnginePickerOutlet.selectRow(searchSettings.searchURL, inComponent: 0, animated: true)
         searchImageOutlet.image = UIImage(named: searchEngines[searchSettings.searchURL][2])
 
-        
         // globaldeki bilgi searchSwitchOutlet'e gelsin
         searchSwitchOutlet.isOn = searchSettings.searchIsOn
         searchSwitchAction(searchSwitchOutlet)
@@ -92,6 +92,14 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         // ilk acildiginda hangi segment seciliyse ona gore kurallar calissin
         settingsSegmentOutlet.selectedSegmentIndex = searchSettings.selectedSegment
         settingsSegmentAction(settingsSegmentOutlet)
+        
+        // history bilgisini label icine yazdirmak
+        historyLabelOutlet.text! = ""
+        for historyItem in historyData {
+            historyLabelOutlet.text! = historyLabelOutlet.text! + "\(historyItem)\n"
+        }
+        
+        
         
     }
 
