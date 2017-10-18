@@ -27,6 +27,7 @@ class ViewController: UIViewController {
             print("Gidilecek URL : \(urlCheck.url)")
             // historyData.append(urlCheck.url)
             historyData.insert(urlCheck.url, at: 0)
+            urlTextFieldOutlet.text! = ""
             
         } else {
             

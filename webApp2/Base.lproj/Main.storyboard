@@ -22,26 +22,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrU-Up-8eg">
-                                <rect key="frame" x="16" y="28" width="216" height="30"/>
+                                <rect key="frame" x="16" y="28" width="206" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgg-Bt-3NP">
+                                <rect key="frame" x="270" y="26" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings" image="settings"/>
+                                <connections>
+                                    <segue destination="NIp-9b-bep" kind="show" id="NzG-e1-CLp"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ST-dR-GPJ" userLabel="BuGo Btn Outlet">
-                                <rect key="frame" x="240" y="27" width="64" height="33"/>
+                                <rect key="frame" x="230" y="27" width="32" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="goBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z9E-IW-SKm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgg-Bt-3NP">
-                                <rect key="frame" x="132" y="195" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="NIp-9b-bep" kind="show" id="NzG-e1-CLp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -160,4 +160,7 @@
             <point key="canvasLocation" x="1055.625" y="127.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="40" height="40"/>
+    </resources>
 </document>
