@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import WebKit
 
 var historyData = [String]()
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKUIDelegate {
+    var webView: WKWebView!
+    
     @IBOutlet weak var webViewOutlet: UIView!
     @IBOutlet weak var urlTextFieldOutlet: UITextField!
     
@@ -29,6 +32,10 @@ class ViewController: UIViewController {
             // historyData.append(urlCheck.url)
             historyData.insert(urlCheck.url, at: 0)
             urlTextFieldOutlet.text! = ""
+            let myURL = URL(string: urlCheck.url)
+            let myRequest = URLRequest(url: myURL!)
+            webView.load(myRequest)
+            
             
         } else {
             
@@ -52,7 +59,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        webView = WKWebView(frame: webViewOutlet.bounds, configuration: WKWebViewConfiguration())
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.webViewOutlet.addSubview(webView)
+        self.webView.allowsBackForwardNavigationGestures = true
+        
+        let myURL = URL(string: "https://www.google.com/")
+        // default url diye bi ayarimiz olsun, boylelikle ilk
+        // let myURL = Bundle.main.url(forResource: "index", withExtension: "html")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
+
+        
     }
 
     override func didReceiveMemoryWarning() {
