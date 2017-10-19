@@ -75,25 +75,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Sb-OD-I0T">
-                                <rect key="frame" x="16" y="85" width="294" height="375"/>
+                                <rect key="frame" x="16" y="85" width="294" height="475"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qm5-11-7W9">
-                                        <rect key="frame" x="245" y="8" width="51" height="31"/>
+                                        <rect key="frame" x="242" y="95" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="searchSwitchAction:" destination="NIp-9b-bep" eventType="valueChanged" id="yzZ-Qn-Rqx"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Arama Yapilsin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTg-XV-a2r">
-                                        <rect key="frame" x="0.0" y="13" width="112" height="21"/>
+                                        <rect key="frame" x="8" y="100" width="112" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QxT-x1-bKo">
-                                        <rect key="frame" x="3" y="41" width="288" height="326"/>
+                                        <rect key="frame" x="3" y="141" width="288" height="326"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YBQ-qp-wDX">
@@ -111,6 +111,21 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://google.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7QI-Gd-Ovk">
+                                        <rect key="frame" x="8" y="31" width="190" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mz-Je-a6r">
+                                        <rect key="frame" x="206" y="31" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Kaydet"/>
+                                        <connections>
+                                            <action selector="defaultWebSiteSaveAction:" destination="NIp-9b-bep" eventType="touchUpInside" id="coZ-RR-ysQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -133,7 +148,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="AfU-Jl-aaG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WB3-8w-a0x">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WB3-8w-a0x">
                                 <rect key="frame" x="16" y="93" width="294" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -149,8 +164,14 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="WB3-8w-a0x"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="defaultWebSiteURLOutlet" destination="7QI-Gd-Ovk" id="ji9-RS-jh9"/>
                         <outlet property="historyLabelOutlet" destination="4lR-PI-D4r" id="GlL-8o-ema"/>
                         <outlet property="historyViewOutlet" destination="WB3-8w-a0x" id="GHW-qi-aeg"/>
                         <outlet property="searchEnginePickerOutlet" destination="YBQ-qp-wDX" id="OH6-2V-179"/>
@@ -163,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U16-ys-FFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.625" y="127.5"/>
+            <point key="canvasLocation" x="1055.625" y="126.7605633802817"/>
         </scene>
         <!--Web Kit View Controller-->
         <scene sceneID="sZF-cF-r82">
@@ -206,6 +227,6 @@
         <image name="settings" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6GR-CH-vQT"/>
+        <segue reference="AfU-Jl-aaG"/>
     </inferredMetricsTieBreakers>
 </document>

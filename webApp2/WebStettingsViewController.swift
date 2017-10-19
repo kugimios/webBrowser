@@ -15,10 +15,17 @@ let searchEngines = [
 ]
 
 
-var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0)
+var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0, defaultURL: "https://apple.com")
 
 
 class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    
+    @IBAction func defaultWebSiteSaveAction(_ sender: UIButton) {
+        searchSettings.defaultURL = defaultWebSiteURLOutlet.text!
+    }
+    @IBOutlet weak var defaultWebSiteURLOutlet: UITextField!
+    
     @IBOutlet weak var historyViewOutlet: UIView!
     
     @IBOutlet weak var historyLabelOutlet: UILabel!
@@ -98,6 +105,9 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         for historyItem in historyData {
             historyLabelOutlet.text! = historyLabelOutlet.text! + "\(historyItem)\n"
         }
+        
+        // default url to textfield
+        defaultWebSiteURLOutlet.text = searchSettings.defaultURL
         
         
         
