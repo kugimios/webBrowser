@@ -58,6 +58,14 @@ class ViewController: UIViewController, WKUIDelegate {
         }
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if historyURL != "" {
+            urlTextFieldOutlet.text = historyURL
+            goBtnAction(goBtnOutlet)
+            urlTextFieldOutlet.text = historyURL
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +75,19 @@ class ViewController: UIViewController, WKUIDelegate {
         self.webViewOutlet.addSubview(webView)
         self.webView.allowsBackForwardNavigationGestures = true
         
+        
         let myURL = URL(string: searchSettings.defaultURL)
-        // default url diye bi ayarimiz olsun, boylelikle ilk
-        // let myURL = Bundle.main.url(forResource: "index", withExtension: "html")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
-
+        
+        
+        
+        // default url diye bi ayarimiz olsun, boylelikle ilk
+        // let myURL = Bundle.main.url(forResource: "index", withExtension: "html")
+        
+        print("++++++")
+        print(historyURL)
+        print("++++++")
         
     }
 

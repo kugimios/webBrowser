@@ -14,6 +14,7 @@ let searchEngines = [
     ["Bing", "https://bing.com/search?q=", "bing"],
 ]
 
+var historyURL = ""
 
 var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0, defaultURL: "https://apple.com")
 
@@ -33,13 +34,19 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-        // eger secim yapildiysa, tiklandiysa.. ana sayfaya git ve bu sayfayi ac
+        // print(indexPath)
+        // print(indexPath.row)
+        historyURL = historyData[indexPath.row]
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "ViewController")
+        self.present(mainViewController, animated: true, completion: nil)
+        
     }
     
 
     
-    @IBAction func defaultWebSiteSaveAction(_ sender: UIButton) {
+     func defaultWebSiteSaveAction(_ sender: UIButton) {
         searchSettings.defaultURL = defaultWebSiteURLOutlet.text!
     }
     @IBOutlet weak var defaultWebSiteURLOutlet: UITextField!
