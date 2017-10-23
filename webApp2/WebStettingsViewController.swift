@@ -68,6 +68,7 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
             settingsViewOutlet.isHidden = true
         }
         searchSettings.selectedSegment = sender.selectedSegmentIndex
+        UserDefaults.standard.set(searchSettings.selectedSegment, forKey: "selectedSegment")
     }
     
     @IBOutlet weak var settingsSegmentOutlet: UISegmentedControl!

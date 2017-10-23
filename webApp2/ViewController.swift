@@ -66,12 +66,13 @@ class ViewController: UIViewController, WKUIDelegate {
             urlTextFieldOutlet.text = historyURL
         }
     }
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // UserDefaults -> defaultURL
-        if let defaultURL = UserDefaults.standard.object(forKey: "defaultURL") as? String {
+        if let defaultURL = UserDefaults.standard.object(forKey: "defaultURL") as? String{
             searchSettings.defaultURL = defaultURL
         }
         
