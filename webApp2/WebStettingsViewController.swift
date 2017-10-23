@@ -16,6 +16,7 @@ let searchEngines = [
 
 var historyURL = ""
 
+// buranin tamaminin UserDefaults ile geliyor olmasi lazim, simdi bunu yapin ;)
 var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0, defaultURL: "https://apple.com")
 
 
@@ -46,9 +47,11 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
     
 
     
-     func defaultWebSiteSaveAction(_ sender: UIButton) {
+    func defaultWebSiteSaveAction(_ sender: UIButton) {
         searchSettings.defaultURL = defaultWebSiteURLOutlet.text!
+        UserDefaults.standard.set(searchSettings.defaultURL, forKey: "defaultURL")
     }
+    
     @IBOutlet weak var defaultWebSiteURLOutlet: UITextField!
     
     @IBOutlet weak var historyViewOutlet: UIView!

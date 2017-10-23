@@ -70,6 +70,11 @@ class ViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // UserDefaults -> defaultURL
+        if let defaultURL = UserDefaults.standard.object(forKey: "defaultURL") as? String {
+            searchSettings.defaultURL = defaultURL
+        }
+        
         webView = WKWebView(frame: webViewOutlet.bounds, configuration: WKWebViewConfiguration())
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.webViewOutlet.addSubview(webView)
@@ -85,10 +90,7 @@ class ViewController: UIViewController, WKUIDelegate {
         // default url diye bi ayarimiz olsun, boylelikle ilk
         // let myURL = Bundle.main.url(forResource: "index", withExtension: "html")
         
-        print("++++++")
-        print(historyURL)
-        print("++++++")
-        
+       
     }
 
     override func didReceiveMemoryWarning() {
