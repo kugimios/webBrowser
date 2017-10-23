@@ -11,7 +11,7 @@ import UIKit
 let searchEngines = [
     ["Google", "https://www.google.com.tr/search?q=", "google"],
     ["Yandex", "https://yandex.com/search?q=", "yahoo"],
-    ["Bing", "https://bing/search?q=", "bing"],
+    ["Bing", "https://bing.com/search?q=", "bing"],
 ]
 
 
@@ -32,6 +32,10 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         return cellItem
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        // eger secim yapildiysa, tiklandiysa.. ana sayfaya git ve bu sayfayi ac
+    }
     
 
     
