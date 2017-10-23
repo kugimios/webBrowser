@@ -18,7 +18,21 @@ let searchEngines = [
 var searchSettings = (searchIsOn: true, searchURL: 2,  selectedSegment: 0, defaultURL: "https://apple.com")
 
 
-class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var historyDataTableViewOutlet: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return historyData.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellItem = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        cellItem.textLabel!.text = historyData[indexPath.row]
+        return cellItem
+    }
+    
+    
 
     
     @IBAction func defaultWebSiteSaveAction(_ sender: UIButton) {
@@ -28,7 +42,8 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBOutlet weak var historyViewOutlet: UIView!
     
-    @IBOutlet weak var historyLabelOutlet: UILabel!
+    // @IBOutlet weak var historyLabelOutlet: UILabel!
+    
     @IBAction func settingsSegmentAction(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             historyViewOutlet.isHidden = true
@@ -101,10 +116,10 @@ class WebStettingsViewController: UIViewController, UIPickerViewDelegate, UIPick
         settingsSegmentAction(settingsSegmentOutlet)
         
         // history bilgisini label icine yazdirmak
-        historyLabelOutlet.text! = ""
-        for historyItem in historyData {
-            historyLabelOutlet.text! = historyLabelOutlet.text! + "\(historyItem)\n"
-        }
+        // historyLabelOutlet.text! = ""
+        // for historyItem in historyData {
+        //    historyLabelOutlet.text! = historyLabelOutlet.text! + "\(historyItem)\n"
+        // }
         
         // default url to textfield
         defaultWebSiteURLOutlet.text = searchSettings.defaultURL
