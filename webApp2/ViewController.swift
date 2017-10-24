@@ -12,7 +12,7 @@ import WebKit
 var historyData = [String]()
 
 
-class ViewController: UIViewController, WKUIDelegate {
+class ViewController: UIViewController, WKUIDelegate, UITabBarDelegate {
     var webView: WKWebView!
     
     @IBOutlet weak var webViewOutlet: UIView!
@@ -37,6 +37,8 @@ class ViewController: UIViewController, WKUIDelegate {
             let myURL = URL(string: urlCheck.url)
             let myRequest = URLRequest(url: myURL!)
             webView.load(myRequest)
+            
+  
             
             
         } else {
@@ -67,6 +69,10 @@ class ViewController: UIViewController, WKUIDelegate {
         }
     }
     
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print(item.tag)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
